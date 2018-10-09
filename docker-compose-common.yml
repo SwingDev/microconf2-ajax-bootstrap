@@ -1,0 +1,13 @@
+version: '2'
+services:
+  api:
+    restart: unless-stopped
+    build:
+      context: ./api
+    volumes:
+      - "./api/fixtures:/app/fixtures"
+      - "./api/src:/app/src"
+      - "./api-reports:/reports"
+      - "./api/package.json:/app/package.json"
+      - "./api/tsconfig.json:/app/tsconfig.json"
+      - "./api/tslint.json:/app/tslint.json"
